@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-(_ogd7ynmb904elw#_debqh^ihda8%lnv)x@4-h9kx@q!f2^h-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+AUTH_USER_MODEL = 'login.UserProfile'
 ALLOWED_HOSTS = []
 
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'otp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'otp',
+        'USER': 'postgres',
+        'PASSWORD': 'hinata11',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
